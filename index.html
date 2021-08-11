@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-F7WyTLiiiPqvu2pGumDR15med0MDkUIo5VTVyyfECR5DZmCnDhti9q5VID02ItWjq6fvDfMaBaDl2J3WdL1uxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Generate Email Signature</title>
+  </head>
+  <body class="p-3 border border-5">
+    <div class="p-1 border border-3">
+    <section class="section">
+        <div class="container p-5">
+          <div class="text-center">
+            <h2 class="display-1 mb-5">
+              Generate
+              <small class="text-muted">Email Signature</small>
+            </h2>
+          </div>
+          <div class="text-left">
+            <div class="content">
+              <ul class="list-unstyled">
+                <li class="lead">
+                  ➡️ Fill out all the fields below that are applicable.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row pb-5">
+            <div class="col p-5 border-end">
+              <h1 class="display-6">Add your information:</h1>
+              <form id="form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name:</label>
+                  <input class="form-control" id="name" placeholder="Your full name">
+                </div>
+
+                <div class="mb-3">
+                  <label for="designation" class="form-label">Designation:</label>
+                  <input class="form-control" id="designation" placeholder="Your designation">
+                </div>
+                
+                <div class="mb-3">
+                  <label for="checkPhone" class="form-label">Enable Phone Number:</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" id="checkPhone" type="checkbox" value="">
+                    </div>
+                    <input type="text" class="form-control" id="phone" placeholder="+1 (408) 990-8483" disabled>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="checkSkype" class="form-label">Enable Skype:</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" id="checkSkype" type="checkbox" value="">
+                    </div>
+                    <input type="text" class="form-control" id="skype" placeholder="You skype ID" disabled>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email:</label>
+                  <input class="form-control" id="email" placeholder="Your email">
+                </div>
+                
+                <!-- <div class="mb-3">
+                  <label for="checkIcons" class="form-label">Icons:</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" id="checkIcons" type="checkbox" value="">
+                    </div>
+                    <input type="text" class="form-control" id="social_network" placeholder="skype id" disabled>
+                  </div>
+                </div> -->
+
+                <div class="mb-3">
+                  <label for="checkLogo" class="form-label">Logo:</label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-text">
+                      <input class="form-check-input mt-0" id="checkLogo" type="checkbox">
+                    </div>
+                    <input type="text" class="form-control" id="logo" placeholder="Remove logo?" disabled>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div class="col p-5">
+              <h1 class="display-6">Preview:</h1>
+
+              <div class="mb-3" id="company">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="company" id="inlineRadio1" value="maxpay" checked>
+                  <label class="form-check-label" for="inlineRadio1">Maxpay</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="company" id="inlineRadio2" value="covery">
+                  <label class="form-check-label" for="inlineRadio2">Covery</label>
+                </div>
+              </div>
+              
+              <div class="card is-primary mb-5">
+                <div class="card-body" id="signature_container">
+                  <table cellspacing="0" cellpadding="0" id="signature">
+                    <tbody>
+                      <tr>
+                        <td style="padding-left:10px; color:rgb(85, 85, 85); font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:16px;" colspan="2">
+                          <span class="name" id="preparedName" style="color:rgb(97, 188, 0); font-weight:bold;">
+                            Name
+                          </span>
+                          <br>
+                          <span class="designation">
+                              Specialist in...
+                            </span>
+                          <br>
+                          <div id="phoneWrap"></div>
+                          <div id="skypeWrap"></div>
+                          <span style="white-space:nowrap">
+                              <a class="email" href="mailto:name@gmail.com" style="color:rgb(85, 85, 85); text-decoration:none;">
+                                name@gmail.com
+                              </a>
+                            </span>
+                          <br>
+                          <br>
+                          <span style="white-space:nowrap" id="logoWrap">
+                              <img src="" class="logo">
+                          </span>
+                          <div id="imageWrap"></div>
+                          <hr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <h1 class="display-6">Signatures:</h1>
+                <div class="controls">
+                  <button class="btn btn-primary" data-select data-signature="signature">
+                    Copy Signature (for Gmail 📧)
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <h1 class="display-6">Instructions:</h1>
+                <span class="lead">Simple click the above button<br> <span class="text-primary font-monospace">Copy Signature (for Gmail 📧)</span> and head towards gmail settings and paste. That's it!</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+  </div>
+  </body>
+</html>
